@@ -26,3 +26,13 @@ test('check the URL of the page', async ({ page }) => {
   // Expect the URL of the page to be "https://playwright.dev/"
   await expect(page).toHaveURL('https://playwright.dev/');
 });
+test('check the visibility of the logo', async ({ page }) => {
+  await page.goto('https://playwright.dev/');
+  // Expect the logo to be visible
+  await expect(page.getByRole('img', { name: 'Playwright logo' })).toBeVisible();
+});
+test('check the text of the get started link', async ({ page }) => {
+  await page.goto('https://playwright.dev/');
+  // Expect the get started link to have the text "Get started"
+  await expect(page.getByRole('link', { name: 'Get started' })).toHaveText('Get started');\
+});
