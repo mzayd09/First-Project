@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodHub Chat</title>
+  <link rel="stylesheet" href="chat.css" />
+</head>
+<body>
+  <div class="chat-shell">
+    <header class="chat-header">
+      <div class="chat-logo">FoodHub Chat</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </header>
+
+    <main class="chat-main">
+      <aside class="chat-sidebar">
+        <div class="sidebar-title">Active Rooms</div>
+        <button class="room-button active" type="button">General</button>
+        <button class="room-button" type="button">Orders</button>
+        <button class="room-button" type="button">Support</button>
+      </aside>
+
+      <section class="chat-panel">
+        <div class="panel-top">
+          <div>
+            <p class="chat-room"># General</p>
+            <p class="chat-status">Chat with FoodHub support and friends</p>
+          </div>
+        </div>
+
+        <div id="messageList" class="message-list" aria-live="polite"></div>
+
+        <form id="chatForm" class="chat-form">
+          <input id="messageInput" type="text" placeholder="Type a message..." autocomplete="off" />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="chat.js"></script>
+</body>
+</html>
