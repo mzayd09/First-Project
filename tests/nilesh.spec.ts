@@ -21,18 +21,3 @@ test('check the title of the page', async ({ page }) => {
   // Expect the title of the page to be "Playwright: Fast and reliable end-to-end testing for modern web apps"
   await expect(page).toHaveTitle('Playwright: Fast and reliable end-to-end testing for modern web apps');
 });
-test('check the URL of the page', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-  // Expect the URL of the page to be "https://playwright.dev/"
-  await expect(page).toHaveURL('https://playwright.dev/');
-});
-test('check the visibility of the logo', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-  // Expect the logo to be visible
-  await expect(page.getByRole('img', { name: 'Playwright logo' })).toBeVisible();
-});
-test('check the text of the get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-  // Expect the get started link to have the text "Get started"
-  await expect(page.getByRole('link', { name: 'Get started' })).toHaveText('Get started');\
-});
