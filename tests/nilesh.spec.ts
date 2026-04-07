@@ -16,3 +16,13 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
+test('check the title of the page', async ({ page }) => {
+  await page.goto('https://playwright.dev/');
+  // Expect the title of the page to be "Playwright: Fast and reliable end-to-end testing for modern web apps"
+  await expect(page).toHaveTitle('Playwright: Fast and reliable end-to-end testing for modern web apps');
+});
+test('check the URL of the page', async ({ page }) => {
+  await page.goto('https://playwright.dev/');
+  // Expect the URL of the page to be "https://playwright.dev/"
+  await expect(page).toHaveURL('https://playwright.dev/');
+});
